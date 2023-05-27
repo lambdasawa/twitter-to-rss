@@ -1,0 +1,17 @@
+version: "3"
+
+tasks:
+  shell:
+    env:
+      AWS_REGION: ap-northeast-1
+    cmds:
+      - "{{.CLI_ARGS}}"
+
+  run:
+    cmds:
+      - watchexec -r -e go -- go run ./...
+
+  deploy:
+    cmds:
+      - terraform init
+      - terraform apply -auto-approve
