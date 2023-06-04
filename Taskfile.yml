@@ -1,9 +1,10 @@
 version: "3"
 
+env:
+  AWS_REGION: ap-northeast-1
+
 tasks:
   shell:
-    env:
-      AWS_REGION: ap-northeast-1
     cmds:
       - "{{.CLI_ARGS}}"
 
